@@ -4,18 +4,32 @@
     {
         static void Main(string[] args)
         {
-            int     A = 1;
-            int     B = 2;
-            double  X = 2.0;
-            double  Y = 4.0;
-            bool C;
+            Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
 
+            var color = Console.ReadLine();
 
-            C = (A < B) | (X > Y);
+            if (color == "red")
+            {
+                Console.BackgroundColor = ConsoleColor.Red;
+                Console.ForegroundColor = ConsoleColor.Black;
 
-            var inv = true;
-            var result = !inv;
-            Console.WriteLine("result= {0}",result);
+                Console.WriteLine("Your color is red!");
+            }
+
+            else if (color == "green")
+            {
+                Console.BackgroundColor = ConsoleColor.Green;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is green!");
+            }
+            else
+            {
+                Console.BackgroundColor = ConsoleColor.Cyan;
+                Console.ForegroundColor = ConsoleColor.Black;
+
+                Console.WriteLine("Your color is cyan!");
+            }
         }
     }
 }
