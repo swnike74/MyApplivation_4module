@@ -4,12 +4,18 @@
     {
         static void Main(string[] args)
         {
-            String A;
-            String B;
+            int     A = 1;
+            int     B = 2;
+            double  X = 2.0;
+            double  Y = 4.0;
             bool C;
 
-            C = A != B;
 
+            C = (A < B) | (X > Y);
+
+            var inv = true;
+            var result = !inv;
+            Console.WriteLine("result= {0}",result);
         }
     }
 }
