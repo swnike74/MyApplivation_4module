@@ -10,8 +10,11 @@
             {
                 Console.WriteLine("Iteration {0}", t);
 
-                switch (Console.ReadLine())
+                var text = Console.ReadLine();
+
+                switch (text)
                 {
+                    
                     case "red":
                         Console.BackgroundColor = ConsoleColor.Red;
                         Console.ForegroundColor = ConsoleColor.Black;
@@ -40,6 +43,11 @@
                         break;
 
                         t++;
+                }
+                if (text == "stop")
+                {
+                    Console.WriteLine("cycle is stopped");
+                    break;
                 }
             } while (t < 3);
         }
