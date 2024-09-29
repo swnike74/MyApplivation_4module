@@ -4,9 +4,11 @@
     {
         static void Main(string[] args)
         {
-            for (int i = 5; i > 0; i--)
+            int t = 0;
+
+            do
             {
-                Console.WriteLine("Iteration {0}", i);
+                Console.WriteLine("Iteration {0}", t);
 
                 switch (Console.ReadLine())
                 {
@@ -36,8 +38,10 @@
 
                         Console.WriteLine("Your color is yellow!");
                         break;
+
+                        t++;
                 }
-            }
+            } while (t < 3);
         }
     }
 }
