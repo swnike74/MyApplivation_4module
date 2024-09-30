@@ -17,6 +17,11 @@
 
             Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
 
+            for (int i = name.Length-1; i >= 0; i--)
+            {
+                Console.Write(name[i] + "");
+            }
+
             Console.ReadKey();
         }
     }
