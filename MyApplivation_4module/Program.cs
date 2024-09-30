@@ -4,52 +4,20 @@
     {
         static void Main(string[] args)
         {
-            int t = 0;
+            Console.WriteLine("Введите своё имя");
 
-            do
+            var name = Console.ReadLine();
+
+            Console.WriteLine("Ваше имя по буквам: ");
+
+            foreach (var ch in name)
             {
-                Console.WriteLine("Iteration {0}", t);
+                Console.Write(ch + " ");
+            }
 
-                var text = Console.ReadLine();
+            Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
 
-                switch (text)
-                {
-                    
-                    case "red":
-                        Console.BackgroundColor = ConsoleColor.Red;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is red!");
-                        break;
-
-                    case "green":
-                        Console.BackgroundColor = ConsoleColor.Green;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is green!");
-                        break;
-
-                    case "cyan":
-                        Console.BackgroundColor = ConsoleColor.Cyan;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is cyan!");
-                        break;
-                    default:
-                        Console.BackgroundColor = ConsoleColor.Yellow;
-                        Console.ForegroundColor = ConsoleColor.Black;
-
-                        Console.WriteLine("Your color is yellow!");
-                        break;
-
-                        t++;
-                }
-                if (text == "stop")
-                {
-                    Console.WriteLine("cycle is stopped");
-                    break;
-                }
-            } while (t < 3);
+            Console.ReadKey();
         }
     }
 }
