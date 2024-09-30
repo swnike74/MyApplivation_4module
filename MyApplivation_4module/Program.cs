@@ -4,23 +4,23 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Введите своё имя");
+            int[,] array = { { 1, 2, 3 }, { 5, 6, 7 } };
 
-            var name = Console.ReadLine();
-
-            Console.WriteLine("Ваше имя по буквам: ");
-
-            foreach (var ch in name)
+            foreach (var item in array)
             {
-                Console.Write(ch + " ");
+                Console.Write(item + " ");
+            }
+            Console.WriteLine(array.Length);
+
+
+            for (int k = 0; k < array.GetUpperBound(1) + 1; k++)
+            {
+                for (int i = 0; i < array.GetUpperBound(0) + 1; i++)
+                    Console.Write(array[i, k] + " ");
+
+                Console.WriteLine();
             }
 
-            Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
-
-            for (int i = name.Length-1; i >= 0; i--)
-            {
-                Console.Write(name[i] + "");
-            }
 
             Console.ReadKey();
         }
