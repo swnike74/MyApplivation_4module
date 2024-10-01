@@ -4,19 +4,27 @@
     {
         static void Main(string[] args)
         {
-            int[][] array = new int[3][];
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
-            array[0] = new int[2] { 1, 2 };
-            array[1] = new int[3] { 1, 2, 3 };
-            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+            int numpos = 0;
 
-            foreach (var num in array)
+            for (int i = 0; i < arr.GetLength(0); i++)
             {
-                foreach (var item in num)
+                for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    Console.Write(item + " ");
+                    if (arr[i, j] > 0) numpos++;
                 }
             }
+
+            int numpos1 = 0;
+            foreach(var item in arr)
+            {
+                if (item > 0) numpos1++;
+            }
+
+            Console.WriteLine("first={0}, second={1}",numpos,numpos1);
+
+           
 
 
         }
