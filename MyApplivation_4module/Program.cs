@@ -6,27 +6,37 @@
         {
             int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
 
-            int numpos = 0;
+            int temp = 0;
 
             for (int i = 0; i < arr.GetLength(0); i++)
             {
                 for (int j = 0; j < arr.GetLength(1); j++)
                 {
-                    if (arr[i, j] > 0) numpos++;
+                    for (int k = j + 1; k < arr.GetLength(1); k++)
+                        if (arr[i, j] > arr[i, k])
+                        {
+                            temp = arr[i, k];
+                            arr[i, k] = arr[i, j];
+                            arr[i, j] = temp;
+                        }
                 }
             }
 
-            int numpos1 = 0;
-            foreach(var item in arr)
+            foreach (var item in arr)
             {
-                if (item > 0) numpos1++;
+                Console.WriteLine(item);
             }
 
-            Console.WriteLine("first={0}, second={1}",numpos,numpos1);
-
-           
-
-
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                Console.WriteLine("\n");
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.WriteLine("{0}",arr[i, j]);
+                }
+            }
         }
+
+                
     }
 }
