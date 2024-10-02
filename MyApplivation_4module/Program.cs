@@ -4,39 +4,21 @@
     {
         static void Main(string[] args)
         {
-            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+            var (name, age) = ("Евгения", 27);
 
-            int temp = 0;
+            Console.WriteLine("Моё имя: {0}", name);
+            Console.WriteLine("Мой возраст: {0}", age);
 
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    for (int k = j + 1; k < arr.GetLength(1); k++)
-                        if (arr[i, j] > arr[i, k])
-                        {
-                            temp = arr[i, k];
-                            arr[i, k] = arr[i, j];
-                            arr[i, j] = temp;
-                        }
-                }
-            }
+            Console.Write("Введите имя: ");
+            name = Console.ReadLine();
+            Console.Write("Введите возраст с цифрами:");
+            age = Convert.ToInt32(Console.ReadLine());
 
-            foreach (var item in arr)
-            {
-                Console.WriteLine(item);
-            }
+            Console.WriteLine("Ваше имя: {0}", name);
+            Console.WriteLine("Ваш возраст: {0}", age);
 
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                Console.WriteLine("\n");
-                for (int j = 0; j < arr.GetLength(1); j++)
-                {
-                    Console.WriteLine("{0}",arr[i, j]);
-                }
-            }
         }
 
-                
+
     }
 }
